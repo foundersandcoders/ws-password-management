@@ -40,25 +40,20 @@ const comparePasswordWithHash = (password, hashedPassword) => {
 
 There are several different ways to implement hashing and here is an explanation of them and short examples using Node.js.
 
-1. Simple hash
+__1. Simple hash__
 
-Example:
 ```
 crypto.createHash('sha256').update('pa$$w0rd').digest('hex');
 ```
 This is somewhat better than storing a plaintext password, but is not that great due to the fact that one computer can compute billions of hashes per second. In fact, huge databases of pre-computed hashes of the most common passwords already exist. These are known as 'rainbow tables'. 6.5 million LinkedIn passwords were hacked in 2012. While they were hashed, they were not 'salted' and were therefore eventually all cracked.
 
-2. Hash with a fixed salt
-
-Example:
+__2. Hash with a fixed salt__
 ```
 crypto.createHash('sha256').update('3c82766e7fe083d96eff7f7a' + 'pa$$w0rd').digest('hex');
 ```
 This is where you add something known as a 'salt'. A salt is a long string of random bytes, added to the password before hashing, to alter the resulting hash. A fixed salt will prevent an attacker using rainbow tables against your hashes. It will also not be possible to brute force the hashes without the salt. However, the salt would be stored in your database or in an environment variable, and if your server has been compromised, it is likely the attacker knows the salt also.
 
 3. Hash with per user salt
-
-Example:
 ```
 const randomString = crypto.randomBytes(12).toString('hex');
 
@@ -66,7 +61,7 @@ crypto.createHash('sha256').update(randomString + 'pa$$w0rd').digest('hex');
 ```
 Generating a new salt for each new hash is another improvement. You create the salt, create the hash, then store both of them in the database together to be used when a user tries to log in. This means that even in the event of an attacker getting a database dump, each password would have to be brute forced individually.
 
-4. bcrypt
+__4. bcrypt__
 bcrypt (paper [here](http://www.openbsd.org/papers/bcrypt-paper.ps) is a hash function that was specifically designed for passwords, and designed to be _very slow_.
 
 It does this by executing an internal encryption/hash function many times in a loop. bcrypt is 10,000x slower than SHA1. 100ms, for example, is fast enough that the user won't notice when they log in, but slow enough to make brute force attacks against the hash much more expensive.
