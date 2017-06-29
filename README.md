@@ -62,7 +62,7 @@ crypto.createHash('sha256').update(randomString + 'pa$$w0rd').digest('hex');
 Generating a new salt for each new hash is another improvement. You create the salt, create the hash, then store both of them in the database together to be used when a user tries to log in. This means that even in the event of an attacker getting a database dump, each password would have to be brute forced individually.
 
 __4. bcrypt__  
-bcrypt (paper [here](http://www.openbsd.org/papers/bcrypt-paper.ps) is a hash function that was specifically designed for passwords, and designed to be _very slow_.
+bcrypt (paper [here](http://www.openbsd.org/papers/bcrypt-paper.ps)) is a hash function that was specifically designed for passwords, and designed to be _very slow_.
 
 It does this by executing an internal encryption/hash function many times in a loop. bcrypt is 10,000x slower than SHA1. 100ms, for example, is fast enough that the user won't notice when they log in, but slow enough to make brute force attacks against the hash much more expensive.
 
