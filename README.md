@@ -1,4 +1,4 @@
-### Workshop 1 - Password Management
+## Workshop 1 - Password Management
 __Learning Outcomes__
 
 - Why not to store plaintext passwords.
@@ -8,7 +8,7 @@ __Learning Outcomes__
 
 ---
 
-#### Plaintext Dangers
+### Plaintext Dangers
 When storing user passwords, the first consideration is to not store them in plaintext (ie storing the actual password). Some reasons for this:
 1. If your user data is compromised, the attackers will not only be able to log in with a user's password, but as people often reuse passwords, the users could also be comprimised elsewhere. prevents escalation of a read only attack
 2. The passwords are visible to anyone who has access to the database.
@@ -17,7 +17,7 @@ If a website has ever emailed you your password, they are likely to be storing i
 
 So when a user is trying to log in, how can you validate their password, if you do not want to store their password? Well, that involves hashing.
 
-#### What is hashing?
+### What is hashing?
 Hashing is when you take one string, known as the _message_, (eg a plaintext password), and run a algorithm (eg MD5, SHA256) on it which changes it into a different string (the _digest_). A hash function should be fast to execute and slow (or impossible) to reverse.
 
 Hashing is deterministic, meaning every time you run the same algorithm on the same string you will get the same result back. This is why you can store the digest in the database and check it against a password that a user may submit through a login form, for example.
@@ -36,7 +36,7 @@ const comparePasswordWithHash = (password, hashedPassword) => {
 
 ```
 
-#### What are the different hashing options?
+### What are the different hashing options?
 
 There are several different ways to implement hashing and here is an explanation of them and short examples using Node.js.
 
@@ -78,7 +78,7 @@ $ 2a        $ 10               $ 045/Zc6RrMraKbXdEJuRS.g0KB3iChSj5RP2oUQCzXF/FgL
 $ bcrypt id $ number of rounds $ 128 bit salt + 184 bit hash
 ```
 
-#### Exercise: Implement `bcryptjs`
+### Exercise: Implement `bcryptjs`
 
 Now for some actual coding. In the `bcrypt-exercise` folder, you will find everything you need.
 
@@ -93,5 +93,5 @@ __Notes:__
 - The tests also support both callbacks and promises, but if you wish to use callbacks, set the `CALLBACK_MODE` value in `.env` to `true` and ensure your callbacks follow the standard `(err, result)` convention.
 - Try to understand each step, why you are doing it, and what the terms 'salt' and 'round' mean in the context of the library.
 
-#### Resources:
+### Resources:
 http://dustwell.com/how-to-handle-passwords-bcrypt.html
