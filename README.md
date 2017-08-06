@@ -1,10 +1,18 @@
 ## Workshop 1 - Password Management
-__Learning Outcomes__
 
-- Why not to store plaintext passwords.
-- What is hashing?
-- Inneffective hashing vs bcrypt hashing.
-- How to use 'bcryptjs' npm package.
+### Learning outcomes
+Understand:
++ why to avoid storing plaintext passwords
++ why a password should be hashed before being stored
++ which hashing algorithms should be used and why
++ what a 'salt' is and why it is useful
++ how salts should be generated and used
++ how bcrypt works
+
+Be able to implement the following:
++ generate a random salt (using bcrypt.js)
++ hash a password (using bcrypt.js)
++ compare it (using bcrypt.js) to the user input
 
 ---
 
