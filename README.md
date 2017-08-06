@@ -1,4 +1,4 @@
-## Workshop 1 - Password Management
+## Password Management
 
 ### Learning outcomes
 Understand:
