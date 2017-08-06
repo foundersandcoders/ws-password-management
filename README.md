@@ -2,20 +2,16 @@
 
 ### Learning outcomes
 Understand:
-+ the importance of making passwords non-recoverable from a database
-+ the difference between encrypting and hashing
++ why to avoid storing plaintext passwords
 + why a password should be hashed before being stored
 + which hashing algorithms should be used and why
-+ what a salt is and how it helps to protect against lookup table and rainbow table attacks
++ what a 'salt' is and why it is useful
 + how salts should be generated and used
-+ how a cryptographic hash function minimises vulnerability to brute force and dictionary attacks
-+ what bcrypt is doing under the hood i.e. key stretching, iteration count
++ how bcrypt works
 
 Be able to implement the following:
 + generate a random salt (using bcrypt.js)
 + hash a password (using bcrypt.js)
-+ store this in a database
-+ retrieve the hashed password from the database
 + compare it (using bcrypt.js) to the user input
 
 ---
