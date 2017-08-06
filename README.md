@@ -90,7 +90,6 @@ __Steps:__
 __Notes:__
 - You can run the tests once using `npm test`, or in watch mode using `npm run test:watch`.
 - `bcryptjs` supports both callbacks and promises (you can also use it synchronously, but that is definitely not recommended). See the documentation for more information.
-- The tests also support both callbacks and promises, but if you wish to use callbacks, set the `CALLBACK_MODE` value in `.env` to `true` and ensure your callbacks follow the standard `(err, result)` convention.
 - Try to understand each step, why you are doing it, and what the terms 'salt' and 'round' mean in the context of the library.
 
 ### Resources:
