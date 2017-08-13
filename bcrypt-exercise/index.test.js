@@ -1,32 +1,37 @@
 'use strict'
 
-require('dotenv').config()
+require('dotenv').config();
+
+const test = require('tape');
 
 const { hashPassword, comparePasswords } = require('./index.js')
 
-test('password is being hashed correctly', () =>
+test('password is being hashed correctly', (t) =>
   hashPassword('wehey', (err, res) => {
-    expect(err).toBe(null)
-    expect(res.substring(0, 4)).toBe('$2a$')
+    t.equal(err, null, 'error should be null');
+    t.equal(res.substring(0, 4), '$2a$');
+    t.end();
   })
 )
 
-test('passwords are being validated correctly - pass', () =>
+test('passwords are being validated correctly - pass', (t) =>
   hashPassword('pa$$w0rd', (err, hashedPw) => {
-    expect(err).toBe(null)
+    t.equal(err, null, 'error should be null');
     comparePasswords('pa$$w0rd', hashedPw, (err, correct) => {
-      expect(err).toBe(null)
-      expect(correct).toBe(true)
+      t.equal(err, null, 'error should be null');
+      t.equal(correct, true);
+      t.end();
     })
   })
 )
 
-test('passwords are being validated correctly - pass', () =>
+test('passwords are being validated correctly - pass', (t) =>
   hashPassword('pa$$w0rd', (err, hashedPw) => {
-    expect(err).toBe(null)
+    t.equal(err, null, 'error should be null');
     comparePasswords('WRONG', hashedPw, (err, correct) => {
-      expect(err).toBe(null)
-      expect(correct).toBe(false)
+      t.equal(err, null, 'error should be null');
+      t.equal(correct, false);
+      t.end();
     })
   })
 )
