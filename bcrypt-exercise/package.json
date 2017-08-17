@@ -1,11 +1,15 @@
 {
   "scripts": {
-    "test": "jest",
-    "test:watch": "jest --watch"
+    "test": "tape ./index.test.js | tap-spec",
+    "test:watch": "tape-watch ./index.test.js | tap-spec"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
-    "dotenv": "^4.0.0",
-    "jest": "^20.0.4"
+    "dotenv": "^4.0.0"
+  },
+  "devDependencies": {
+    "tape-watch": "^2.3.0",
+    "tap-spec": "^4.1.1",
+    "tape": "^4.8.0"
   }
 }
