@@ -83,7 +83,7 @@ bcrypt has a 'per user salt' feature built into it, and the salt is added to the
 $2a$10$045/Zc6RrMraKbXdEJuRS.g0KB3iChSj5RP2oUQCzXF/FgLmVbmwW
 
 $ 2a        $ 10               $ 045/Zc6RrMraKbXdEJuRS.g0KB3iChSj5RP2oUQCzXF/FgLmVbmwW
-$ bcrypt id $ number of rounds $ 128 bit salt + 184 bit hash
+$ bcrypt id $ number of rounds $ 128 bit salt         . 184 bit hash
 ```
 
 ### Exercise: Implement `bcryptjs`
