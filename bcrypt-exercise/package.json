@@ -4,8 +4,7 @@
     "test:watch": "tape-watch ./index.test.js | tap-spec"
   },
   "dependencies": {
-    "bcryptjs": "^2.4.3",
-    "dotenv": "^4.0.0"
+    "bcryptjs": "^2.4.3"
   },
   "devDependencies": {
     "tape-watch": "^2.3.0",
