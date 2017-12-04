@@ -14,6 +14,7 @@ test("password is being hashed correctly", t =>
 test("passwords are being validated correctly - correct password", t =>
   hashPassword("pa$$w0rd", (err, hashedPw) => {
     t.equal(err, null, "error should be null");
+
     comparePasswords("pa$$w0rd", hashedPw, (err, correct) => {
       t.equal(err, null, "error should be null");
       t.equal(correct, true);
@@ -24,6 +25,7 @@ test("passwords are being validated correctly - correct password", t =>
 test("passwords are being validated correctly - incorrect password", t =>
   hashPassword("pa$$w0rd", (err, hashedPw) => {
     t.equal(err, null, "error should be null");
+
     comparePasswords("WRONG", hashedPw, (err, correct) => {
       t.equal(err, null, "error should be null");
       t.equal(correct, false);
