@@ -26,7 +26,7 @@ If a website has ever emailed you your password, they are likely to be storing i
 So when a user is trying to log in, how can you validate their password, if you do not want to store their password? Well, that involves hashing.
 
 ### What is hashing?
-Hashing is when you take one string, known as the _message_, (eg a plaintext password), and run a algorithm (eg MD5, SHA256) on it which changes it into a different string (the _digest_). A hash function should be fast to execute and slow (or impossible) to reverse.
+Hashing is when you take one string, known as the _message_, (eg a plaintext password), and run an algorithm (e.g. MD5, SHA256) on it which changes it into a different string (the _digest_). A hash function should be fast to execute and slow (or impossible) to reverse.
 
 Hashing is deterministic, meaning every time you run the same algorithm on the same string you will get the same result back. This is why you can store the digest in the database and check it against a password that a user may submit through a login form, for example.
 
