@@ -101,4 +101,4 @@ __Notes:__
 - Try to understand each step, why you are doing it, and what the terms 'salt' and 'round' mean in the context of the library.
 
 ### Resources:
-http://dustwell.com/how-to-handle-passwords-bcrypt.html
+https://auth0.com/blog/hashing-in-action-understanding-bcrypt/
