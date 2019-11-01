@@ -92,8 +92,9 @@ Now for some actual coding. In the `bcrypt-exercise` folder, you will find every
 
 __Steps:__
 1. Have a quick read of the `bcryptjs` documentation [here](https://www.npmjs.com/package/bcryptjs). `bcryptjs` is a pure JavaScript implementation of `bcrypt` (as opposed to the JavaScript/C++ [`bcrypt`](https://www.npmjs.com/package/bcrypt) npm package).
-2. `$ npm install`
-3. In `index.js`, implement the functions `hashPassword`, and `comparePasswords`, so that the tests in `index.test.js` pass. `hashPassword` accepts a `String`, and should asynchronously return a `String`. `comparePasswords` accepts two `String`s and returns a `Boolean`, also asynchronously.
+2. `cd into the `bcrypt-exercise folder
+3. `$ npm install`
+4. In `index.js`, implement the functions `hashPassword`, and `comparePasswords`, so that the tests in `index.test.js` pass. `hashPassword` accepts a `String`, and should asynchronously return a `String`. `comparePasswords` accepts two `String`s and returns a `Boolean`, also asynchronously.
 
 __Notes:__
 - You can run the tests once using `npm test`, or in watch mode using `npm run test:watch`.
